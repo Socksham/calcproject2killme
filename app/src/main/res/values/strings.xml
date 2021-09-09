@@ -20,4 +20,12 @@
     <string name="welcome_to_calculator_the_puzzle">Welcome to Calculator the Puzzle</string>
     <string name="next">Next ➤</string>
     <string name="level_1">Level: 1</string>
+    <string name="welcome_to_story_mode">Welcome to Story Mode!</string>
+    <string name="would_you_like_to_go_to_the_tutorial_first">Would you like to go to the Tutorial First?</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="story_mode">Story Mode</string>
+    <string name="tutorial_label">Tutorial Label</string>
+    <string name="click_here_for_a_tutorial">Click here for a Tutorial</string>
+    <string name="storymodelabel">storyModeLabel</string>
+    <string name="click_here_to_play_the_story">Click here to play the Story</string>
 </resources>
