@@ -23,25 +23,26 @@
       android:id="@+id/instructionLabelOne"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_below="@id/titleLabel"
+      android:layout_marginTop="30dp"
+      android:fontFamily="serif-monospace"
+      android:gravity="center_horizontal"
       android:text="The point of this game is to get to the goal number, while staying under the button click limit"
       android:textColor="@color/white"
-      android:gravity="center_horizontal"
-      android:fontFamily="serif-monospace"
-      android:layout_below="@id/titleLabel"
-      android:textSize="20sp"
-      android:layout_marginTop="30dp"/>
+      android:textSize="20sp" />
 
   <TextView
       android:id="@+id/instructionLabelTwo"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_marginTop="25dp"
+      android:fontFamily="serif-monospace"
+      android:gravity="center_horizontal"
       android:text="In this case, the number of button presses you need to stay under"
       android:textColor="@color/white"
-      android:fontFamily="serif-monospace"
       android:textSize="20sp"
-      android:layout_below="@id/instructionLabelOne"
-      android:gravity="center_horizontal"
-      android:layout_marginTop="25dp"/>
+      android:visibility="invisible" />
 
   <Button
       android:id="@+id/nextButton"

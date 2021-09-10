@@ -1,7 +1,10 @@
 package com.example.calculatorprojectv2;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,17 +31,30 @@ public class TutorialActivity extends AppCompatActivity {
         iTwoLabel = (TextView) findViewById(R.id.instructionLabelTwo);
         //^^ TextViews displaying everything
 
-        switch (count){
-            case 0:
+        nBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 count++;
-                mLabel.setVisibility(View.GONE);
-                iLabel.setText("These are multiple pieces of information that are available to you");
-                break;
+
+                updateLabels();
+            }
+        });
+    }
+
+    private void updateLabels(){
+        switch (count){
             case 1:
                 count++;
-                iLabel.setText("Such as the constraint information");
-                iTwoLabel.setVisibility(View.VISIBLE);
+                iLabel.setText("These are multiple pieces of information that are available to you");
                 break;
+            case 2:
+                count++;
+                iLabel.setText("This is the button limit, the number of button clicks available to you");
+                //add in image view to point towards (hand drawn arrow file) the information
+                break;
+            case 3:
+                count++;
+                iLabel.setText("I like Cheese");
         }
     }
 }
