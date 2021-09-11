@@ -35,14 +35,14 @@
         android:id="@+id/tutorialButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/instructionLabelOne"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="135dp"
         android:background="@drawable/main_custom_button"
+        android:minWidth="125dp"
         android:text="@string/tutorial"
         android:textAllCaps="false"
-        android:textSize="27sp"
-        android:minWidth="125dp"
-        android:layout_marginStart="30dp"
-        android:layout_below="@id/instructionLabelOne"
-        android:layout_marginTop="135dp"/>
+        android:textSize="27sp" />
 
     <Button
         android:id="@+id/storyModeButton"
