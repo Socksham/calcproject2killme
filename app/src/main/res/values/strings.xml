@@ -16,7 +16,6 @@
     <string name="minus">-</string>
     <string name="times">×</string>
     <string name="divide">÷</string>
-    <string name="testbutton">testButton</string>
     <string name="welcome_to_calculator_the_puzzle">Welcome to Calculator the Puzzle</string>
     <string name="next">Next ➤</string>
     <string name="level_1">Level: 1</string>
@@ -28,4 +27,13 @@
     <string name="click_here_for_a_tutorial">Click here for a Tutorial</string>
     <string name="storymodelabel">storyModeLabel</string>
     <string name="click_here_to_play_the_story">Click here to play the Story</string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+    <string name="welcome_to_calculator_to_kill_me">Welcome to Calculator to Kill Me!</string>
+    <string name="backspaceArrow">←</string>
+    <string name="apocalyptic_calculator">Apocalyptic Calculator</string>
+    <string name="welcome_to_the_apocalypse">Welcome to the Apocalypse</string>
 </resources>

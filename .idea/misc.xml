@@ -8,11 +8,24 @@
         <entry key="..\:/Users/ianeu/AndroidStudioProjects/CalculatorProjectV2/app/src/main/res/layout/activity_level_one.xml" value="0.25" />
         <entry key="..\:/Users/ianeu/AndroidStudioProjects/CalculatorProjectV2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/ianeu/AndroidStudioProjects/CalculatorProjectV2/app/src/main/res/layout/level_one_activity.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/AndroidStudioProjects/calcproject2killme/app/src/main/res/layout/activity_level_one.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/AndroidStudioProjects/calcproject2killme/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/AndroidStudioProjects/calcproject2killme/app/src/main/res/layout/activity_smand_t.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/AndroidStudioProjects/calcproject2killme/app/src/main/res/layout/activity_tutorial.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/Desktop/calcproject2killme/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2890625" />
+        <entry key="..\:/Users/ianeu/Desktop/calcproject2killme/app/src/main/res/layout/activity_level_one.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/Desktop/calcproject2killme/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/ianeu/Desktop/calcproject2killme/app/src/main/res/layout/activity_smand_t.xml" value="0.27291666666666664" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/calculator_custom_button.xml" value="0.18611111111111112" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18611111111111112" />
-        <entry key="app/src/main/res/layout/activity_level_one.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_level_one.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.302734375" />
-        <entry key="app/src/main/res/layout/activity_unlimited_mode.xml" value="0.1753472222222222" />
+        <entry key="app/src/main/res/layout/activity_smand_t.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_story_mode.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_tutorial.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/content_tutorial.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.4036458333333333" />
       </map>
     </option>
   </component>

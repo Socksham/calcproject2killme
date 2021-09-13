@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TutorialActivity"
+    android:background="@color/black">
+
+  <TextView
+      android:id="@+id/titleLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:fontFamily="serif-monospace"
+      android:gravity="center_horizontal"
+      android:text="@string/welcome_to_calculator_to_kill_me"
+      android:textColor="@color/white"
+      android:textSize="40sp" />
+
+  <TextView
+      android:id="@+id/instructionLabelOne"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/titleLabel"
+      android:layout_marginTop="30dp"
+      android:fontFamily="serif-monospace"
+      android:gravity="center_horizontal"
+      android:text="The point of this game is to get to the goal number, while staying under the button click limit"
+      android:textColor="@color/white"
+      android:textSize="20sp" />
+
+  <TextView
+      android:id="@+id/instructionLabelTwo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_marginTop="25dp"
+      android:fontFamily="serif-monospace"
+      android:gravity="center_horizontal"
+      android:text="In this case, the number of button presses you need to stay under"
+      android:textColor="@color/white"
+      android:textSize="20sp"
+      android:visibility="invisible" />
+
+  <ImageView
+      android:id="@+id/arrowGuide"
+      android:layout_width="86dp"
+      android:layout_height="91dp"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="40dp"
+      android:layout_marginEnd="25dp"
+      android:background="@drawable/tutorial_button_arrow"
+      android:contentDescription="Point Towards Image"
+      android:rotation="-90"
+      android:scaleY="-1"
+      android:visibility="invisible" />
+
+  <ImageView
+      android:id="@+id/descImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="85dp"
+      android:background="@drawable/guidessonekeystrokes"
+      android:contentDescription="Display Visual"
+      android:visibility="invisible" />
+
+  <Button
+      android:id="@+id/nextButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/main_custom_button"
+      android:text="@string/next"
+      android:textSize="27sp"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="260dp"/>
+
+
+  </RelativeLayout>

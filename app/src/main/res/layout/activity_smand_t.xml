@@ -11,26 +11,25 @@
         android:id="@+id/titleScreenLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/welcome_to_story_mode"
-        android:textSize="40sp"
-        android:textColor="@color/white"
-        android:fontFamily="serif-monospace"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+        android:text="@string/apocalyptic_calculator"
+        android:textColor="@color/white"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/instructionLabelOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/would_you_like_to_go_to_the_tutorial_first"
-        android:textColor="@color/white"
-        android:fontFamily="serif-monospace"
-        android:textSize="25sp"
         android:layout_below="@id/titleScreenLabel"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+        android:text="@string/welcome_to_the_apocalypse"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/tutorialButton"
@@ -38,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/instructionLabelOne"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="104dp"
         android:background="@drawable/main_custom_button"
         android:minWidth="125dp"
         android:text="@string/tutorial"
@@ -49,14 +48,14 @@
         android:id="@+id/storyModeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/main_custom_button"
-        android:text="@string/story_mode"
-        android:textAllCaps="false"
-        android:textSize="27sp"
-        android:minWidth="150dp"
         android:layout_below="@id/tutorialButton"
         android:layout_marginStart="230dp"
-        android:layout_marginTop="70dp"/>
+        android:layout_marginTop="87dp"
+        android:background="@drawable/main_custom_button"
+        android:minWidth="150dp"
+        android:text="@string/story_mode"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
 
     <ImageView
         android:id="@+id/arrowTutorial"
@@ -64,40 +63,66 @@
         android:layout_height="91dp"
         android:layout_below="@id/instructionLabelOne"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/tutorial_button_arrow"
-        android:contentDescription="@string/tutorial_label"/>
+        android:contentDescription="@string/tutorial_label" />
 
     <TextView
         android:id="@+id/tutorialLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/click_here_for_a_tutorial"
-        android:textSize="17sp"
-        android:textColor="@color/white"
-        android:fontFamily="serif-monospace"
         android:layout_below="@id/instructionLabelOne"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="52dp"/>
+        android:layout_marginTop="25dp"
+        android:fontFamily="serif-monospace"
+        android:text="@string/click_here_for_a_tutorial"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
 
     <ImageView
         android:id="@+id/arrowStoryMode"
         android:layout_width="86dp"
         android:layout_height="91dp"
-        android:background="@drawable/story_mode_button"
-        android:layout_below="@id/storyModeButton"
+        android:layout_below="@id/tutorialButton"
         android:layout_marginStart="287dp"
-        android:contentDescription="@string/storymodelabel"/>
+        android:scaleY="-1"
+        android:background="@drawable/story_mode_button"
+        android:contentDescription="@string/storymodelabel" />
 
     <TextView
         android:id="@+id/storyModeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tutorialButton"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif-monospace"
         android:text="@string/click_here_to_play_the_story"
         android:textColor="@color/white"
-        android:fontFamily="serif-monospace"
-        android:textSize="17sp"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/unlimitedModeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/storyModeButton"
-        android:layout_marginTop="58dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/main_custom_button"
+        android:minWidth="80dp"
+        android:text="Unlimited Mode"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <TextView
+        android:id="@+id/unlimitedModeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unlimitedModeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif-monospace"
+        android:text="or Click Here to play Unlimited Mode"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
 
 </RelativeLayout>
