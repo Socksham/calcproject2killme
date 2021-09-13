@@ -19,7 +19,6 @@ public class UnlimitedNumberGenerator {
             if(num){
                 if(first){
                     int index = (int) (Math.random() * ((numbers.length - 1) + 1));
-                    Log.d("TAG", String.valueOf(index));
                     numbersFinal.add(numbers[index]);
                     first = false;
                     daNumber += numbers[index];
