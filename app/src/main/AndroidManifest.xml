@@ -13,6 +13,9 @@
             android:name=".SMandT"
             android:exported="true" />
         <activity
+            android:name=".UnlimitedModeActivity"
+            android:exported="true" />
+        <activity
             android:name=".LevelOneActivity"
             android:exported="true" />
         <activity

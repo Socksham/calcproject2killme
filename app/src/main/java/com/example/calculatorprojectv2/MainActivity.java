@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     //^^ Fade animation (play around with later)
 
     public void openLevelOne(){
-        Intent intent = new Intent(this, SMandT.class);
+        Intent intent = new Intent(this, UnlimitedModeActivity.class);
         startActivity(intent);
     }
 
