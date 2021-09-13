@@ -12,12 +12,12 @@
       android:id="@+id/titleLabel"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:fontFamily="serif-monospace"
+      android:gravity="center_horizontal"
       android:text="@string/welcome_to_calculator_to_kill_me"
       android:textColor="@color/white"
-      android:textSize="40sp"
-      android:gravity="center_horizontal"
-      android:fontFamily="serif-monospace"
-      android:layout_centerHorizontal="true"/>
+      android:textSize="40sp" />
 
   <TextView
       android:id="@+id/instructionLabelOne"
@@ -42,6 +42,31 @@
       android:text="In this case, the number of button presses you need to stay under"
       android:textColor="@color/white"
       android:textSize="20sp"
+      android:visibility="invisible" />
+
+  <ImageView
+      android:id="@+id/arrowGuide"
+      android:layout_width="86dp"
+      android:layout_height="91dp"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_alignParentEnd="true"
+      android:layout_marginTop="40dp"
+      android:layout_marginEnd="25dp"
+      android:background="@drawable/tutorial_button_arrow"
+      android:contentDescription="Point Towards Image"
+      android:rotation="-90"
+      android:scaleY="-1"
+      android:visibility="invisible" />
+
+  <ImageView
+      android:id="@+id/descImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/instructionLabelOne"
+      android:layout_marginStart="40dp"
+      android:layout_marginTop="85dp"
+      android:background="@drawable/guidessonekeystrokes"
+      android:contentDescription="Display Visual"
       android:visibility="invisible" />
 
   <Button

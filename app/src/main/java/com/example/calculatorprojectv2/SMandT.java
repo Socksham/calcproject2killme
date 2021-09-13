@@ -1,9 +1,14 @@
 package com.example.calculatorprojectv2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -11,11 +16,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.io.IOException;
+
 public class SMandT extends AppCompatActivity {
 
-    Button tBtn, sBtn;
+    Button tBtn, sBtn, uBtn;
     ImageView tIV, sIV;
-    TextView tLabel, sLabel;
+    TextView tLabel, sLabel, uLabel;
+    MediaPlayer neonGenesisEvangelion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +34,7 @@ public class SMandT extends AppCompatActivity {
 
         tBtn = (Button) findViewById(R.id.tutorialButton);
         sBtn = (Button) findViewById(R.id.storyModeButton);
+        uBtn = (Button) findViewById(R.id.unlimitedModeButton);
         //^^ Buttons changing activities
 
         tIV = (ImageView) findViewById(R.id.arrowTutorial);
@@ -32,9 +43,11 @@ public class SMandT extends AppCompatActivity {
 
         tLabel = (TextView) findViewById(R.id.tutorialLabel);
         sLabel = (TextView) findViewById(R.id.storyModeLabel);
+        uLabel = (TextView) findViewById(R.id.unlimitedModeLabel);
         //^^ Description of button function
 
         startAnimation();
+        playMusic();
 
         tBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +60,7 @@ public class SMandT extends AppCompatActivity {
     private void startAnimation(){
         Animation animationOne = AnimationUtils.loadAnimation(this, R.anim.slide_right);
         Animation animationTwo = AnimationUtils.loadAnimation(this, R.anim.slide_left);
+        Animation animationThree = AnimationUtils.loadAnimation(this, R.anim.slide_up);
 
         tBtn.setAnimation(animationOne);
         tIV.setAnimation(animationOne);
@@ -55,10 +69,23 @@ public class SMandT extends AppCompatActivity {
         sBtn.setAnimation(animationTwo);
         sIV.setAnimation(animationTwo);
         sLabel.setAnimation(animationTwo);
+
+        uBtn.setAnimation(animationThree);
+        uLabel.setAnimation(animationThree);
     }
 
     private void openTutorial(){
         Intent intent = new Intent(this, TutorialActivity.class);
         startActivity(intent);
+
+        neonGenesisEvangelion.stop();
+    }
+
+    private void playMusic(){
+        if (neonGenesisEvangelion == null){
+            neonGenesisEvangelion = MediaPlayer.create(this, R.raw.neon_genesis_op);
+            neonGenesisEvangelion.start();
+            neonGenesisEvangelion.setLooping(true);
+        }
     }
 }
