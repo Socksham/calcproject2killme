@@ -25,7 +25,7 @@ public class SMandT extends AppCompatActivity {
     Button tBtn, sBtn, uBtn;
     ImageView tIV, sIV;
     TextView tLabel, sLabel, uLabel;
-    MediaPlayer neonGenesisEvangelion;
+    MediaPlayer sAOGotToWin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,14 +78,17 @@ public class SMandT extends AppCompatActivity {
         Intent intent = new Intent(this, TutorialActivity.class);
         startActivity(intent);
 
-        neonGenesisEvangelion.stop();
+        sAOGotToWin.stop();
     }
 
     private void playMusic(){
-        if (neonGenesisEvangelion == null){
-            neonGenesisEvangelion = MediaPlayer.create(this, R.raw.neon_genesis_op);
-            neonGenesisEvangelion.start();
-            neonGenesisEvangelion.setLooping(true);
+        if (sAOGotToWin == null){
+            sAOGotToWin = MediaPlayer.create(this, R.raw.got_to_win);
+            sAOGotToWin.start();
+            sAOGotToWin.setLooping(true);
+        } else {
+            sAOGotToWin.release();
+            sAOGotToWin = null;
         }
     }
 }

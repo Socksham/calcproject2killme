@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class LevelOneActivity extends AppCompatActivity implements View.OnClickListener{
     TextView display, goalDisplay, buttonClickCounter, constraintDisplay, levelDisplay; //add a TextView for the number that the use has to reach
-    Button bOne, bTwo, bThree, bFour, bFive, bSix, bSeven, bEight, bNine, bAdd, bSub, bMulti, bDiv, cButton;
+    Button bOne, bTwo, bThree, bFour, bFive, bSix, bSeven, bEight, bNine, bAdd, bSub, bMulti, cButton;
 
     private int clickCounter = 0;
     private String displayLabel = "";
@@ -59,7 +59,6 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
         bAdd = (Button) findViewById(R.id.additionButton);
         bSub = (Button) findViewById(R.id.subtractionButton);
         bMulti = (Button) findViewById(R.id.multiplicationButton);
-        bDiv = (Button) findViewById(R.id.divisionButton);
         cButton = (Button) findViewById(R.id.calculateButton);
         //^^ The numerical calculator buttons
 
@@ -75,7 +74,6 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
         bAdd.setOnClickListener(this);
         bSub.setOnClickListener(this);
         bMulti.setOnClickListener(this);
-        bDiv.setOnClickListener(this);
         cButton.setOnClickListener(this);
         //^^ For the Click Listener for the Button
 
@@ -155,7 +153,6 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
         bAdd.setVisibility(View.GONE);
         bSub.setVisibility(View.GONE);
         bMulti.setVisibility(View.GONE);
-        bDiv.setVisibility(View.GONE);
         cButton.setVisibility(View.GONE);
     }
 
@@ -719,53 +716,6 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
                 clickCounter++;
                 buttonClickCounter.setText("Button Clicks: " + clickCounter);
                 displayLabel = displayLabel.concat("×");
-                display.setText(displayLabel);
-
-                if (!goalOneA){
-                    if (clickCounter > goalOneClick){
-                        toast.show();
-                        displayLabel = "";
-                        display.setText(displayLabel);
-                        clickCounter = 0;
-                        buttonClickCounter.setText("Button Clicks: " + clickCounter);
-                    }
-                } else if (!goalTwoA){
-                    if (clickCounter > goalTwoClick){
-                        toast.show();
-                        displayLabel = "";
-                        display.setText(displayLabel);
-                        clickCounter = 0;
-                        buttonClickCounter.setText("Button Clicks: " + clickCounter);
-                    }
-                } else if (!goalThreeA){
-                    if (clickCounter > goalThreeClick){
-                        toast.show();
-                        displayLabel = "";
-                        display.setText(displayLabel);
-                        clickCounter = 0;
-                        buttonClickCounter.setText("Button Clicks: " + clickCounter);
-                    }
-                } else if (!goalFourA){
-                    fgd.show();
-                    displayLabel = "";
-                    display.setText(displayLabel);
-                    clickCounter = 0;
-                    buttonClickCounter.setText("Button Clicks: " + clickCounter);
-                } else if (!goalFiveA){
-                    if (clickCounter > goalFiveClick){
-                        toast.show();
-                        displayLabel = "";
-                        display.setText(displayLabel);
-                        clickCounter = 0;
-                        buttonClickCounter.setText("Button Clicks: " + clickCounter);
-                    }
-                }
-
-                break;
-            case R.id.divisionButton:
-                clickCounter++;
-                buttonClickCounter.setText("Button Clicks: " + clickCounter);
-                displayLabel = displayLabel.concat("÷");
                 display.setText(displayLabel);
 
                 if (!goalOneA){
