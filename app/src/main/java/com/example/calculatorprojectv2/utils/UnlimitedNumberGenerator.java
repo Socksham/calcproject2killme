@@ -7,11 +7,12 @@ import java.util.ArrayList;
 public class UnlimitedNumberGenerator {
     String[] operations = {"+", "-", "*"};
     int[] numbers = {2, 3, 4, 5, 6, 7, 8, 9};
-    ArrayList<Integer> numbersFinal = new ArrayList<>();
-    ArrayList<Boolean> numberOrOperations = new ArrayList<>();
-    ArrayList<String> operationsFinal = new ArrayList<>();
+
 
     public int getNumber(int amountNums){
+        ArrayList<Integer> numbersFinal = new ArrayList<>();
+        ArrayList<Boolean> numberOrOperations = new ArrayList<>();
+        ArrayList<String> operationsFinal = new ArrayList<>();
         boolean num = true;
         boolean first = true;
         int daNumber = 0;
@@ -69,6 +70,9 @@ public class UnlimitedNumberGenerator {
     }
 
     public int getNumber(int amountNums, String operation){
+        ArrayList<Integer> numbersFinal = new ArrayList<>();
+        ArrayList<Boolean> numberOrOperations = new ArrayList<>();
+        ArrayList<String> operationsFinal = new ArrayList<>();
         boolean num = true;
         boolean first = true;
         int daNumber = 0;

@@ -55,6 +55,13 @@ public class SMandT extends AppCompatActivity {
                 openTutorial();
             }
         });
+
+        uBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openUnlimited();
+            }
+        });
     }
 
     private void startAnimation(){
@@ -76,6 +83,12 @@ public class SMandT extends AppCompatActivity {
 
     private void openTutorial(){
         Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
+
+    }
+
+    private void openUnlimited(){
+        Intent intent = new Intent(this, UnlimitedModeActivity.class);
         startActivity(intent);
 
         sAOGotToWin.stop();
