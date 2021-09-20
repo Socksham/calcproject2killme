@@ -15,7 +15,7 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/mainLoadProgBar"/>
+        android:layout_above="@id/mainLoadProgBar" />
 
     <ProgressBar
         android:id="@+id/mainLoadProgBar"

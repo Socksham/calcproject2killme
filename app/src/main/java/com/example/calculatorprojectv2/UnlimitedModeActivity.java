@@ -190,6 +190,13 @@ public class UnlimitedModeActivity extends AppCompatActivity {
         levelDisplay.setText("Level: " + level);
         goal = goalNum;
         numClicksAllowed = numClicks;
+        if(!constraint.equals("")){
+            constraintDisplay.setText("Constraints: " + constraint);
+
+        }else{
+            constraintDisplay.setText("");
+
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -222,6 +229,8 @@ public class UnlimitedModeActivity extends AppCompatActivity {
         CharSequence textUnder = "Goal Undershot!";
         int durationTwo = Toast.LENGTH_SHORT;
 
+        boolean err = false;
+
         Toast underShot = Toast.makeText(contextTwo, textUnder, durationTwo);
         Toast overShot = Toast.makeText(contextTwo, textOver, durationTwo);
 
@@ -232,13 +241,24 @@ public class UnlimitedModeActivity extends AppCompatActivity {
         ArrayList<Boolean> numberOrOperations = new ArrayList<>();
         ArrayList<Character> operationsFinal = new ArrayList<>();
 
+        boolean lastWasOperation = true;
+
         for(int i = 0; i < expEval.length(); i++){
             Log.d("TAG", String.valueOf(expEval.charAt(i)));
             if(expEval.charAt(i) == "+".charAt(0) || expEval.charAt(i) == "-".charAt(0) || expEval.charAt(i) == "*".charAt(0)){
                 operationsFinal.add(expEval.charAt(i));
                 numberOrOperations.add(true);
+                lastWasOperation = true;
             }else{
-                numbersFinal.add(Integer.parseInt(String.valueOf(expEval.charAt(i))));
+                if(lastWasOperation){
+                    numbersFinal.add(Integer.parseInt(String.valueOf(expEval.charAt(i))));
+                    lastWasOperation = false;
+                }else{
+                    String numIn = numbersFinal.get(numbersFinal.size() - 1).toString();
+                    numIn += String.valueOf(expEval.charAt(i));
+                    numbersFinal.set(numbersFinal.size() - 1, Integer.parseInt(numIn));
+                    lastWasOperation = false;
+                }
                 if(i != 0){
                     numberOrOperations.add(false);
                 }
@@ -248,59 +268,63 @@ public class UnlimitedModeActivity extends AppCompatActivity {
         Log.d("TAG", String.valueOf(numbersFinal));
         Log.d("TAG", String.valueOf(operationsFinal));
 
-
-        int finalNum = 0;
-        for(int z = 0; z < numbersFinal.size(); z++){
-            if(z == 0){
-                finalNum += numbersFinal.get(z);
-            }else{
-                if(operationsFinal.get(z - 1) == "+".charAt(0)){
-                    finalNum += numbersFinal.get(z);
-                }else if(operationsFinal.get(z - 1) == "-".charAt(0)){
-                    finalNum -= numbersFinal.get(z);
-                }else{
-                    finalNum *= numbersFinal.get(z);
+        if(!constraint.equals("")){
+            for(int d = 0; d < operationsFinal.size(); d++){
+                Log.d("TAG", constraint);
+                if(!String.valueOf(operationsFinal.get(d)).equals(constraint)){
+                    err = true;
                 }
-
-            }
-            Log.d("TAG", String.valueOf(finalNum));
-        }
-
-        expEval = expEval.replaceAll("×", "*");
-
-
-        Expression exp = new Expression(expEval);
-
-
-        String resultS = String.valueOf(exp.calculate());
-
-
-        double result = Double.parseDouble(resultS);
-
-        if(clickCounter == numClicksAllowed){
-            if (finalNum == goal){
-                newGoal();
-            } else {
-                if (finalNum > goal){
-                    overShot.show();
-                } else {
-                    underShot.show();
-                }
-
-                displayLabel = "";
-                clickCounter = 0;
-            }
-
-            display.setText(displayLabel);
-            buttonClickCounter.setText("Button Clicks: " + clickCounter);
-        }else{
-            if(clickCounter < numClicksAllowed){
-                underShot.show();
-            }else{
-                overShot.show();
             }
         }
 
+       if(!err){
+           int finalNum = 0;
+           for(int z = 0; z < numbersFinal.size(); z++){
+               if(z == 0){
+                   finalNum += numbersFinal.get(z);
+               }else{
+                   if(operationsFinal.get(z - 1) == "+".charAt(0)){
+                       finalNum += numbersFinal.get(z);
+                   }else if(operationsFinal.get(z - 1) == "-".charAt(0)){
+                       finalNum -= numbersFinal.get(z);
+                   }else{
+                       finalNum *= numbersFinal.get(z);
+                   }
+
+               }
+               Log.d("TAG", String.valueOf(finalNum));
+           }
+
+           expEval = expEval.replaceAll("×", "*");
+
+
+           Expression exp = new Expression(expEval);
+
+
+           String resultS = String.valueOf(exp.calculate());
+
+
+           double result = Double.parseDouble(resultS);
+
+               if (finalNum == goal){
+                   newGoal();
+               } else {
+                   if (finalNum > goal){
+                       overShot.show();
+                   } else {
+                       underShot.show();
+                   }
+
+                   displayLabel = "";
+                   clickCounter = 0;
+               }
+
+               display.setText(displayLabel);
+               buttonClickCounter.setText("Button Clicks: " + clickCounter);
+       }else{
+           Toast error = Toast.makeText(contextTwo, "Did not meet constraints!", durationTwo);
+            error.show();
+       }
     }
 
     public void newGoal(){
