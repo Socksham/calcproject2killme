@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,8 +25,9 @@ public class UnlimitedModeActivity extends AppCompatActivity {
 
     TextView display, goalDisplay, buttonClickCounter, constraintDisplay, levelDisplay;
     //add a TextView for the number that the use has to reach
-    Button bOne, bTwo, bThree, bFour, bFive, bSix, bSeven, bEight, bNine, bAdd, bSub,
-            bMulti, bDiv, cButton;
+    Button bOne, bTwo, bThree, bFour, bFive, bSix, bSeven, bEight, bNine, bAdd, bSub, bMulti, cButton, clearButton, bMButton;
+
+    MediaPlayer backgroundMusic;
 
     private int clickCounter = 0;
 
@@ -55,12 +58,16 @@ public class UnlimitedModeActivity extends AppCompatActivity {
         bSub = (Button) findViewById(R.id.subtractionButton);
         bMulti = (Button) findViewById(R.id.multiplicationButton);
         cButton = (Button) findViewById(R.id.calculateButton);
+        clearButton = (Button) findViewById(R.id.backspaceButton);
+        bMButton = (Button) findViewById(R.id.backToMenu);
 
         display = (TextView) findViewById(R.id.display);
         goalDisplay = (TextView) findViewById((R.id.goalDisplay));
         buttonClickCounter = (TextView) findViewById(R.id.buttonClickCounter);
         constraintDisplay = (TextView) findViewById(R.id.constraintDisplay);
         levelDisplay = (TextView) findViewById(R.id.levelLabel);
+
+        playMusic();
 
         if(Math.random() < 0.5){
             int min = 3;
@@ -178,36 +185,62 @@ public class UnlimitedModeActivity extends AppCompatActivity {
             }
         });
 
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayLabel = "";
+                display.setText(displayLabel);
+
+                clickCounter = 0;
+                buttonClickCounter.setText("Button Clicks: " + clickCounter);
+            }
+        });
+
+        bMButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMenu();
+            }
+        });
+
+    }
+
+    private void playMusic(){
+        if (backgroundMusic == null){
+            backgroundMusic = MediaPlayer.create(this, R.raw.xue_hua_piao_piao_trap_remix);
+            backgroundMusic.start();
+            backgroundMusic.setLooping(true);
+        } else {
+            backgroundMusic.release();
+            backgroundMusic = null;
+        }
     }
 
     private void setGoal(int goalNum, int numClicks){
         clickCounter = 0;
         displayLabel = "";
         goalDisplay.setText("Goal: " + goalNum);
-        constraintDisplay.setText(numClicks + " clicks");
+        if(constraint != ""){
+            constraintDisplay.setText(numClicks + " clicks" + " constraint is " + constraint);
+
+        }else{
+            constraintDisplay.setText(numClicks + " clicks");
+
+        }
         buttonClickCounter.setText("Button Clicks: " + numClicks);
         level++;
         levelDisplay.setText("Level: " + level);
         goal = goalNum;
         numClicksAllowed = numClicks;
-        if(!constraint.equals("")){
-            constraintDisplay.setText("Constraints: " + constraint);
-
-        }else{
-            constraintDisplay.setText("");
-
-        }
     }
 
     @SuppressLint("SetTextI18n")
     public void handleNumBtnClick(String btn){
         Context context = getApplicationContext();
         CharSequence keystrokeOver = "Too many Button Presses!";
-        CharSequence sillyGoose = "I said Addition you silly goose :)";
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, keystrokeOver, duration);
-        Toast fgd = Toast.makeText(context, sillyGoose, duration);
 
         clickCounter++;
         buttonClickCounter.setText("Button Clicks: " + clickCounter);
@@ -368,6 +401,13 @@ public class UnlimitedModeActivity extends AppCompatActivity {
 
             setGoal(number, clicks);
         }
+    }
+
+    private void openMenu(){
+        Intent intent = new Intent(this, SMandT.class);
+        startActivity(intent);
+
+        backgroundMusic.stop();
     }
 
 }

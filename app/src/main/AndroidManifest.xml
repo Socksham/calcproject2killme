@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculatorProjectV2">
         <activity
+            android:name=".WinningScreen"
+            android:exported="true" />
+        <activity
+            android:name=".FinalBossBattle"
+            android:exported="true" />
+        <activity
+            android:name=".HackEvaKeyPad"
+            android:exported="true" />
+        <activity
+            android:name=".death_screen"
+            android:exported="true" />
+        <activity
+            android:name=".first_fight_scene"
+            android:exported="true" />
+        <activity
+            android:name=".BulkheadKeypadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ActualStoryMode"
+            android:exported="true" />
+        <activity
             android:name=".StoryMode"
             android:exported="true" />
         <activity
@@ -17,8 +38,8 @@
             android:exported="true" />
         <activity
             android:name=".SMandT"
-            android:exported="true"
-            android:configChanges="orientation"/>
+            android:configChanges="orientation"
+            android:exported="true" />
         <activity
             android:name=".LevelOneActivity"
             android:exported="true" />

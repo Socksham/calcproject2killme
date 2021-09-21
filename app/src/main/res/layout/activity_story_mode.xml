@@ -7,6 +7,52 @@
     android:background="@color/black"
     tools:context=".StoryMode">
 
+    <TextView
+        android:id="@+id/selectDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Choose your difficulty"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:gravity="center_horizontal"
+        android:fontFamily="serif-monospace"/>
 
+    <Button
+        android:id="@+id/easyDiffBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/story_mode_buttons"
+        android:minWidth="150dp"
+        android:text="Easy Mode"
+        android:textAllCaps="false"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/normalDiffBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/easyDiffBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/story_mode_buttons"
+        android:minWidth="175dp"
+        android:text="Normal Mode"
+        android:textAllCaps="false"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/hardDiffBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/normalDiffBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/story_mode_buttons"
+        android:minWidth="175dp"
+        android:text="Hard Mode"
+        android:textAllCaps="false"
+        android:textSize="50sp" />
 
 </RelativeLayout>

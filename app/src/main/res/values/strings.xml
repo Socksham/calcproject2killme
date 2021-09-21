@@ -33,7 +33,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
     <string name="welcome_to_calculator_to_kill_me">Welcome to Calculator to Kill Me!</string>
-    <string name="backspaceArrow">←</string>
+    <string name="backspaceArrow">Clear</string>
     <string name="apocalyptic_calculator">Apocalyptic Calculator</string>
     <string name="welcome_to_the_apocalypse">Welcome to the Apocalypse</string>
 </resources>

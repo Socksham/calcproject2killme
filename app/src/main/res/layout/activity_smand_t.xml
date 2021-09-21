@@ -86,7 +86,7 @@
         android:layout_below="@id/tutorialButton"
         android:layout_marginStart="287dp"
         android:scaleY="-1"
-        android:background="@drawable/story_mode_button"
+        android:background="@drawable/story_mode_button_arrow"
         android:contentDescription="@string/storymodelabel" />
 
     <TextView

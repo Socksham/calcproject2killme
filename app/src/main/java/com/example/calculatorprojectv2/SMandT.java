@@ -62,6 +62,13 @@ public class SMandT extends AppCompatActivity {
                 openUnlimited();
             }
         });
+
+        sBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openStoryMode();
+            }
+        });
     }
 
     private void startAnimation(){
@@ -85,10 +92,18 @@ public class SMandT extends AppCompatActivity {
         Intent intent = new Intent(this, TutorialActivity.class);
         startActivity(intent);
 
+        sAOGotToWin.stop();
     }
 
     private void openUnlimited(){
         Intent intent = new Intent(this, UnlimitedModeActivity.class);
+        startActivity(intent);
+
+        sAOGotToWin.stop();
+    }
+
+    private void openStoryMode(){
+        Intent intent = new Intent(this, ActualStoryMode.class);
         startActivity(intent);
 
         sAOGotToWin.stop();

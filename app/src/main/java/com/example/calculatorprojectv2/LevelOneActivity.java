@@ -3,6 +3,7 @@ package com.example.calculatorprojectv2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class LevelOneActivity extends AppCompatActivity implements View.OnClickListener{
     TextView display, goalDisplay, buttonClickCounter, constraintDisplay, levelDisplay; //add a TextView for the number that the use has to reach
-    Button bOne, bTwo, bThree, bFour, bFive, bSix, bSeven, bEight, bNine, bAdd, bSub, bMulti, cButton;
+    Button bOne, bTwo, bThree, bFour, bFive, bSix, bSeven, bEight, bNine, bAdd, bSub, bMulti, cButton, clearButton;
 
     private int clickCounter = 0;
     private String displayLabel = "";
@@ -60,6 +61,7 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
         bSub = (Button) findViewById(R.id.subtractionButton);
         bMulti = (Button) findViewById(R.id.multiplicationButton);
         cButton = (Button) findViewById(R.id.calculateButton);
+        clearButton = (Button) findViewById(R.id.clearButton);
         //^^ The numerical calculator buttons
 
         bOne.setOnClickListener(this);
@@ -75,6 +77,7 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
         bSub.setOnClickListener(this);
         bMulti.setOnClickListener(this);
         cButton.setOnClickListener(this);
+        clearButton.setOnClickListener(this);
         //^^ For the Click Listener for the Button
 
         display = (TextView) findViewById(R.id.display);
@@ -153,7 +156,20 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
         bAdd.setVisibility(View.GONE);
         bSub.setVisibility(View.GONE);
         bMulti.setVisibility(View.GONE);
-        cButton.setVisibility(View.GONE);
+        clearButton.setVisibility(View.GONE);
+        cButton.setText("Press to go back to Menu");
+
+        cButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backToMenu();
+            }
+        });
+    }
+
+    private void backToMenu(){
+        Intent intent = new Intent(this, SMandT.class);
+        startActivity(intent);
     }
 
     @Override
@@ -759,7 +775,7 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
                 }
 
                 break;
-            case R.id.calculateButton:
+            case R.id.calculateButton: //here down
                 String expEval = display.getText().toString();
 
                 expEval = expEval.replaceAll("×", "*");
@@ -769,6 +785,8 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
 
                 String resultS = String.valueOf(exp.calculate());
                 double result = Double.parseDouble(resultS);
+
+                //^^ That's the calculation
 
                 if (!goalOneA){
                     if (result == goalOne){
@@ -851,6 +869,12 @@ public class LevelOneActivity extends AppCompatActivity implements View.OnClickL
                     }
                 }
 
+                break;
+            case R.id.clearButton:
+                displayLabel = "";
+                display.setText(displayLabel);
+                clickCounter = 0;
+                buttonClickCounter.setText("Button Clicks: " + clickCounter);
                 break;
         }
     }

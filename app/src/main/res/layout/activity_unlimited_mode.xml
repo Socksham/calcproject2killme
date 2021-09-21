@@ -232,5 +232,17 @@
         android:textColor="#FFA500"
         android:textSize="25sp" />
 
+    <Button
+        android:id="@+id/backToMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backspaceButton"
+        android:layout_alignStart="@id/backspaceButton"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/calculator_custom_button"
+        android:text="Back To Menu"
+        android:textAllCaps="false"
+        android:textColor="#FFA500" />
+
 
 </RelativeLayout>

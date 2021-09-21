@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".death_screen">
+
+    <TextView
+        android:id="@+id/youDiedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Died!"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:fontFamily="serif-monospace"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp"/>
+
+    <Button
+        android:id="@+id/startOverButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youDiedLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/main_custom_button"
+        android:minWidth="200dp"
+        android:text="Return to Menu"
+        android:textAllCaps="false"
+        android:textSize="30sp" />
+
+</RelativeLayout>

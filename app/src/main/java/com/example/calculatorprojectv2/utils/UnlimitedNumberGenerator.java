@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UnlimitedNumberGenerator {
     String[] operations = {"+", "-", "*"};
-    int[] numbers = {2, 3, 4, 5, 6, 7, 8, 9};
+    int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 
     public int getNumber(int amountNums){
